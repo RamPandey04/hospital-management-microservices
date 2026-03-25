@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: APPOINTMENT-SERVICE
+
+
+server:
+  port: 8084
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/appointmentdb
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

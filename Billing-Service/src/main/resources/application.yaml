@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: BILLING-SERVICE
+
+
+server:
+  port: 8086
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/billingdb
+    username: postgres
+    password: your_password_here
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: billing-group
+      auto-offset-reset: earliest
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
